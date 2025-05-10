@@ -1,0 +1,226 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  transition: background 0.3s ease;
+  z-index: 999;
+}
+.navbar.scrolled {
+  background: #111;
+}
+.logo {
+  font-size: 1.5rem;
+  color: #ff6b6b;
+  font-weight: bold;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+.nav-links li a {
+  text-decoration: none;
+  color: #fff;
+  transition: 0.3s;
+}
+.nav-links li a:hover {
+  color: #ff6b6b;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  position: relative;
+  background: url('images/img1.jpg') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-content {
+  color: white;
+  text-align: center;
+  animation: fadeUp 1s ease-in-out;
+}
+.hero-content h1 {
+  font-size: 3rem;
+  height: 60px;
+}
+.hero-content p {
+  margin-top: 20px;
+  font-size: 1.2rem;
+}
+.cursor {
+  background: white;
+  width: 3px;
+  animation: blink 0.7s infinite;
+}
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* Gallery Section */
+.gallery-section {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.gallery-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+  justify-items: center;
+}
+.boom-img {
+  width: 100%;
+  max-width: 300px;
+  height: 300px;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(0.6);
+  animation: none;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.boom-img:nth-child(1) {
+  animation: zoomFadeRotate 6s infinite;
+  animation-delay: 0s;
+}
+.boom-img:nth-child(2) {
+  animation: zoomFadeRotate 6s infinite;
+  animation-delay: 1s;
+}
+.boom-img:nth-child(3) {
+  animation: zoomFadeRotate 6s infinite;
+  animation-delay: 2s;
+}
+.boom-img:nth-child(4) {
+  animation: zoomFadeRotate 6s infinite;
+  animation-delay: 3s;
+}
+.boom-img:nth-child(5) {
+  animation: zoomFadeRotate 6s infinite;
+  animation-delay: 4s;
+}
+.boom-img:nth-child(6) {
+  animation: zoomFadeRotate 6s infinite;
+  animation-delay: 5s;
+}
+
+@keyframes boomBounceLoop {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) translateY(50px);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05) translateY(-10px);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.5) translateY(30px);
+  }
+}
+
+
+/* Fade-in heading and paragraph */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1.5s forwards;
+}
+@keyframes zoomFadeRotate {
+  0% {
+    opacity: 0;
+    transform: scale(0.6) rotate(-10deg);
+  }
+  20% {
+    opacity: 1;
+    transform: scale(1.05) rotate(2deg);
+  }
+  40% {
+    opacity: 0;
+    transform: scale(0.7) rotate(5deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.6) rotate(-5deg);
+  }
+}
+
+/* Section styling */
+#contact.section {
+  padding: 80px 20px;
+  text-align: center;
+  background-color: #333;
+  color: white;
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+#contact.section:hover {
+  transform: scale(1.05); /* Slight zoom-in effect on hover */
+}
+
+/* Heading styling */
+#contact h2 {
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* Paragraph styling */
+#contact p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+
+/* Button styling */
+.join-btn {
+  padding: 15px 40px;
+  background-color: #ff6347;
+  color: white;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.join-btn:hover {
+  background-color: #ff3c1f;
+  transform: scale(1.1); /* Button enlarges slightly on hover */
+}
